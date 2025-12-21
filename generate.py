@@ -1,15 +1,15 @@
+from pathlib import Path
 import torch
 
 from generation_config import GenerationConfig, generate, get_tokenizer
 from Q_MoE_400_torch import count_parameters, load_model_from_checkpoint
 
-
-CHECKPOINT_PATH = "./moe_torch_state_dict_90000.pt"
+CHECKPOINT_PATH = Path("./torch_checkpoints/Q-MoE-400-90000.pt").resolve()
 
 PROMPT = """Hello I'm a language model,"""
 
-MAX_NEW_TOKENS = 100
-TEMPERATURE = 1
+MAX_NEW_TOKENS = 35
+TEMPERATURE = 1.0
 DO_SAMPLE = True
 TOP_K = 50
 TOP_P = 0.95

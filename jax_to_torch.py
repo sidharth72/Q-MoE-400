@@ -3,6 +3,7 @@ import math
 from dataclasses import dataclass
 from typing import Any, Dict, Tuple
 from collections.abc import Mapping
+from pathlib import Path
 
 import numpy as np
 import torch
@@ -293,8 +294,8 @@ def inject_weights_from_jax(model: MoETransformer, jax_params: Dict[str, Any]) -
 
 @dataclass(frozen=True)
 class ExportConfig:
-    step_dir: str = "/teamspace/studios/this_studio/checkpoints/step_75000"
-    out_path: str = "/teamspace/studios/this_studio/moe_torch_state_dict_75000.pt"
+    step_dir: str = Path("jax_checkpoints/step_90000").resolve()
+    out_path: str = Path("torch_checkpoints/Q-MoE-400-90000.pt").resolve()
     device: str = "cpu"
 
 
