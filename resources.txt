@@ -1,0 +1,7 @@
+Switch Transformer: https://arxiv.org/abs/2101.03961
+MoeFication: https://arxiv.org/pdf/2110.01786
+LLama-MOE: https://arxiv.org/html/2406.16554v1
+MoeFication Source Code: https://github.com/thunlp/MoEfication/blob/main/faster_moefication/moefication.py
+Top-K Gated Routing MOE: https://arxiv.org/pdf/1701.06538
+Mixtral Sparse MOE Huggingface: modelling_mixtral.py
+RoPE llama: https://github.com/meta-llama/llama/blob/main/llama/model.py#L80
