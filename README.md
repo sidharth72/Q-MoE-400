@@ -38,7 +38,7 @@ out = model.generate(
     **inputs,
     max_new_tokens=50,
     do_sample=True,
-    temperature=0.8
+    temperature=1.0
 )
 
 print(tok.decode(out[0], skip_special_tokens=True))
