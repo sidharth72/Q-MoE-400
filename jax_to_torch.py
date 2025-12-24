@@ -1,4 +1,5 @@
 from orbax.checkpoint import Checkpointer, PyTreeCheckpointHandler
+import os
 import math
 from dataclasses import dataclass
 from typing import Any, Dict, Tuple
@@ -259,6 +260,7 @@ def _get_arr(flat: Dict[str, Any], key: str) -> Any:
 
 
 def load_orbax_params(step_dir: str) -> Dict[str, Any]:
+    step_dir = os.path.abspath(os.path.expanduser(step_dir))
     ckpt = Checkpointer(PyTreeCheckpointHandler()).restore(step_dir)
     ts = ckpt["train_state"]
     return ts["params"]
@@ -301,6 +303,10 @@ class ExportConfig:
 
 def main() -> None:
     cfg = ExportConfig()
+
+    out_dir = os.path.dirname(os.path.abspath(os.path.expanduser(cfg.out_path)))
+    if out_dir:
+        os.makedirs(out_dir, exist_ok=True)
 
     jax_params = load_orbax_params(cfg.step_dir)
     model = MoETransformer().to(torch.device(cfg.device))

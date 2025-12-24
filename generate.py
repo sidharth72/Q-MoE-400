@@ -6,9 +6,15 @@ from Q_MoE_400_torch import count_parameters, load_model_from_checkpoint
 
 CHECKPOINT_PATH = Path("./torch_checkpoints/Q-MoE-400-90000.pt").resolve()
 
-PROMPT = """Hello I'm a language model,"""
+PROMPT = """
+Title: Why Simplicity Matters in Software Design
 
-MAX_NEW_TOKENS = 35
+Many software systems become difficult to maintain not because the problems are hard, but because unnecessary complexity accumulates over time. Extra abstractions, premature optimizations, and unclear design choices often make systems fragile.
+Experienced engineers tend to favor simple designs that are easy to understand, test, and evolve. Simplicity reflects clarity of thought and strong fundamentals rather than lack of sophistication.
+
+"""
+
+MAX_NEW_TOKENS = 350
 TEMPERATURE = 1.0
 DO_SAMPLE = True
 TOP_K = 50

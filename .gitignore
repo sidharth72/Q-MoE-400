@@ -2,3 +2,4 @@ checkpoints
 jax_checkpoints
 torch_checkpoints
 __pycache__
+hf_export
