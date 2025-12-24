@@ -24,6 +24,29 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 # Generate text
+text = """
+
+# Generate text
+text = """
+Title: Why Simplicity Matters in Software Design
+
+Many software systems become difficult to maintain not because the problems are hard, but because unnecessary complexity accumulates over time. Extra abstractions, premature optimizations, and unclear design choices often make systems fragile.
+
+Experienced engineers tend to favor simple designs that are easy to understand, test, and evolve. Simplicity reflects clarity of thought and strong fundamentals rather than lack of sophistication.
+"""
+inputs = tok(text, return_tensors="pt")
+inputs = {k: v.to(model.device) for k, v in inputs.items()}
+
+out = model.generate(
+    **inputs,
+    max_new_tokens=50,
+    do_sample=True,
+    temperature=0.8
+)
+
+print(tok.decode(out[0], skip_special_tokens=True))
+
+"""
 inputs = tok("Neural network are ", return_tensors="pt")
 inputs = {k: v.to(model.device) for k, v in inputs.items()}
 
