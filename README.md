@@ -24,7 +24,7 @@ model = AutoModelForCausalLM.from_pretrained(
 )
 
 # Generate text
-inputs = tok("Artificial Neural network are ", return_tensors="pt")
+inputs = tok("Neural network are ", return_tensors="pt")
 inputs = {k: v.to(model.device) for k, v in inputs.items()}
 
 out = model.generate(
