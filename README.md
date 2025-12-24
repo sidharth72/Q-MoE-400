@@ -25,9 +25,6 @@ model = AutoModelForCausalLM.from_pretrained(
 
 # Generate text
 text = """
-
-# Generate text
-text = """
 Title: Why Simplicity Matters in Software Design
 
 Many software systems become difficult to maintain not because the problems are hard, but because unnecessary complexity accumulates over time. Extra abstractions, premature optimizations, and unclear design choices often make systems fragile.
