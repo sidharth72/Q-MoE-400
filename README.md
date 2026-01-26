@@ -77,7 +77,7 @@ pip install torch numpy transformers tiktoken
 ### 3. Download Checkpoints
 To run the local [generate.py](cci:7://file:///c:/QuarkML/Projects/MoE/generate.py:0:0-0:0) script, you need to download the raw PyTorch checkpoint (`.pt` file).
 
-👉 **[Download Checkpoints Here](https://huggingface.co/QuarkML/Q-MoE-400/tree/main/torch_checkpoints)**
+👉 **[Download Checkpoints Here](https://huggingface.co/QuarkML/QMoE-400-checkpoints/tree/main/torch_checkpoints)**
 
 Download `moe_torch_state_dict_90000.pt` (or the latest step) and place it in the root of the repository.
 
